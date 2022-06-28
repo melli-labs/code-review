@@ -26,6 +26,7 @@ class Post(BaseModel):
     updated_at: datetime = Field(default_factory=datetime.now)
     body: str
     author: str
+    tags: list[str] = Field([])
 
 
 in_memory_db: dict[str, list[Post]] = {"posts": []}
