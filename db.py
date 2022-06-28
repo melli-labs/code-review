@@ -56,4 +56,4 @@ def get_post_by_id(post_id: int):
 
     :return: the post with given id model or None if no post with given id was found
     """
-    return next((post for post in in_memory_db["posts"] if post.id == post_id), None)
+    return next((post for post in in_memory_db["posts"] if str(post.id) == post_id), None)
