@@ -1,14 +1,15 @@
 # Add tags to the posts
 
 We need tags to organize the posts, so we can show in our frontend
-only posts that are related to a specific tag
+only posts that are related to a specific tag. To save network bandwidth
+add the option to only receive posts for a specific tag.
 
-To make it easier for the user, the tags should be set automatically
-if they appear the posts title or content.
-Afterwards the user should be able to change the automatically assigned 
-tags manually.
+Also to make it easier for the authors when they create a post, the tags
+should be set automatically if they appear the posts title or content.
+Afterwards the user should be able to manually change the assigned tags
+in case there was something wrong.
 
-We currently want the following tags:
+We currently want support for the following tags:
   - python
   - vue
   - nodejs
