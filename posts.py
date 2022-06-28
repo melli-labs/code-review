@@ -30,4 +30,23 @@ def get_by_id(post_id: int):
 @router.post("/posts")
 def create_new_post(post_create: PostCreateSchema):
     post = Post(**post_create.dict())
+
+    if "python" in post.body or "Python" in post.body:
+        post.tags.append("python")
+    if "vue" in post.body or "Vue" in post.body:
+        post.tags.append("vue")
+    if "nodejs" in post.body or "NodeJS" in post.body:
+        post.tags.append("nodejs")
+    if "php" in post.body or "PHP" in post.body:
+        post.tags.append("php")
+
     return save_post(post)
+
+
+@router.post("/posts/{postId}/edit-tags")
+def set_tags_on_post(postId: str, newTags: list[str]):
+    post = get_post_by_id(postId)
+
+    post.tags = newTags
+    post = save_post(post)
+    return post
