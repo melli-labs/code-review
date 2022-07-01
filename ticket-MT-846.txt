@@ -1,3 +1,0 @@
-# Add a title to each Post
-
-The title should have a max length of 100 characters
