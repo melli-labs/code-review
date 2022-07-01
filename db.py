@@ -24,6 +24,7 @@ class Post(BaseModel):
     id: int = Field(default_factory=next_post_id)
     created_at: datetime = Field(default_factory=datetime.now)
     updated_at: datetime = Field(default_factory=datetime.now)
+    title_of_post: str = Field(..., max_length=100)
     body: str
     author: str
 
